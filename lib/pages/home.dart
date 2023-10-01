@@ -51,9 +51,19 @@ class _HomePageState extends State<HomePage> {
       dateTime: DateTime.now(),
     );
     Provider.of<ExpenseData>(context, listen: false).addNewExpense(newExpense);
+    Navigator.pop(context);
+    clear();
   }
 
-  void cancel() {}
+  void cancel() {
+    Navigator.pop(context);
+    clear();
+  }
+
+  void clear() {
+    newExpenseAmountController.clear();
+    newExpenseNameController.clear();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -68,6 +78,9 @@ class _HomePageState extends State<HomePage> {
           itemCount: value.getallExpenseList().length,
           itemBuilder: (context, index) => ListTile(
             title: Text(value.getallExpenseList()[index].name),
+            subtitle:
+                Text(value.getallExpenseList()[index].dateTime.toString()),
+            trailing: Text("Rs.${value.getallExpenseList()[index].amount}"),
           ),
         ),
       ),

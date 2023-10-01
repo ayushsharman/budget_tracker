@@ -11,10 +11,12 @@ class ExpenseData extends ChangeNotifier {
 
   void addNewExpense(ExpenseItem newExpense) {
     overallExpenseList.add(newExpense);
+    notifyListeners();
   }
 
   void deleteExpense(ExpenseItem newExpense) {
     overallExpenseList.remove(newExpense);
+    notifyListeners();
   }
 
   String getDayName(DateTime dateTime) {
