@@ -1,3 +1,4 @@
+import 'package:budget_tracker_application/components/expense_tile.dart';
 import 'package:budget_tracker_application/data/expense_data.dart';
 import 'package:budget_tracker_application/model/expense_item.dart';
 import 'package:flutter/material.dart';
@@ -76,11 +77,10 @@ class _HomePageState extends State<HomePage> {
         ),
         body: ListView.builder(
           itemCount: value.getallExpenseList().length,
-          itemBuilder: (context, index) => ListTile(
-            title: Text(value.getallExpenseList()[index].name),
-            subtitle:
-                Text(value.getallExpenseList()[index].dateTime.toString()),
-            trailing: Text("Rs.${value.getallExpenseList()[index].amount}"),
+          itemBuilder: (context, index) => ExpenseTile(
+            name: value.getallExpenseList()[index].name,
+            amount: value.getallExpenseList()[index].amount,
+            dateTime: value.getallExpenseList()[index].dateTime,
           ),
         ),
       ),
