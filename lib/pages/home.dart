@@ -75,13 +75,22 @@ class _HomePageState extends State<HomePage> {
           onPressed: addNewExpense,
           child: const Icon(Icons.add),
         ),
-        body: ListView.builder(
-          itemCount: value.getallExpenseList().length,
-          itemBuilder: (context, index) => ExpenseTile(
-            name: value.getallExpenseList()[index].name,
-            amount: value.getallExpenseList()[index].amount,
-            dateTime: value.getallExpenseList()[index].dateTime,
-          ),
+        body: ListView(
+          children: [
+            //Bar graph
+
+            //Expenses
+            ListView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: value.getallExpenseList().length,
+              itemBuilder: (context, index) => ExpenseTile(
+                name: value.getallExpenseList()[index].name,
+                amount: value.getallExpenseList()[index].amount,
+                dateTime: value.getallExpenseList()[index].dateTime,
+              ),
+            ),
+          ],
         ),
       ),
     );
