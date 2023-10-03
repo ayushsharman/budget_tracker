@@ -1,3 +1,4 @@
+import 'package:budget_tracker_application/components/expense_summary.dart';
 import 'package:budget_tracker_application/components/expense_tile.dart';
 import 'package:budget_tracker_application/data/expense_data.dart';
 import 'package:budget_tracker_application/model/expense_item.dart';
@@ -78,6 +79,7 @@ class _HomePageState extends State<HomePage> {
         body: ListView(
           children: [
             //Bar graph
+            ExpenseSummary(startofWeek: value.startofWeekDate()),
 
             //Expenses
             ListView.builder(
