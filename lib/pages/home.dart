@@ -34,11 +34,11 @@ class _HomePageState extends State<HomePage> {
         actions: [
           MaterialButton(
             onPressed: save,
-            child: Text("Save"),
+            child: const Text("Save"),
           ),
           MaterialButton(
             onPressed: cancel,
-            child: Text("Cancel"),
+            child: const Text("Cancel"),
           )
         ],
       ),
