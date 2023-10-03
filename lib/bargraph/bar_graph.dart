@@ -1,14 +1,16 @@
+import 'package:budget_tracker_application/bargraph/bar_data.dart';
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
 class MyBarGraph extends StatelessWidget {
-  final double? maxY;
-  final double? sunAmount;
-  final double? monAmount;
-  final double? tueAmount;
-  final double? wedAmount;
-  final double? thurAmount;
-  final double? friAmount;
-  final double? satAmount;
+  final double maxY;
+  final double sunAmount;
+  final double monAmount;
+  final double tueAmount;
+  final double wedAmount;
+  final double thurAmount;
+  final double friAmount;
+  final double satAmount;
   const MyBarGraph({
     super.key,
     required this.maxY,
@@ -23,6 +25,33 @@ class MyBarGraph extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    BarData myBarData = BarData(
+      sunAmount: sunAmount,
+      monAmount: monAmount,
+      tueAmount: tueAmount,
+      wedAmount: wedAmount,
+      thurAmount: thurAmount,
+      friAmount: friAmount,
+      satAmount: satAmount,
+    );
+
+    myBarData.initializeBarData();
+
+    return BarChart(
+      BarChartData(
+        maxY: 100,
+        minY: 0,
+        barGroups: myBarData.barData
+            .map(
+              (data) => BarChartGroupData(
+                x: data.x,
+                barRods: [
+                  BarChartRodData(toY: data.y),
+                ],
+              ),
+            )
+            .toList(),
+      ),
+    );
   }
 }
