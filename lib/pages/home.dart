@@ -25,9 +25,15 @@ class _HomePageState extends State<HomePage> {
           mainAxisSize: MainAxisSize.min,
           children: [
             TextField(
+              decoration: const InputDecoration(
+                hintText: "Enter Amount",
+              ),
               controller: newExpenseAmountController,
             ),
             TextField(
+              decoration: const InputDecoration(
+                hintText: "Enter Expense Name",
+              ),
               controller: newExpenseNameController,
             ),
           ],
