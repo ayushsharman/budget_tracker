@@ -1,5 +1,5 @@
 import 'package:budget_tracker_application/data/expense_data.dart';
-import 'package:budget_tracker_application/pages/home/home.dart';
+import 'package:budget_tracker_application/pages/bottom_nav.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -14,9 +14,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (context) => ExpenseData(),
-      builder: (context, child) => const MaterialApp(
+      builder: (context, child) => MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: HomePage(),
+        home: BottomNavBar(),
       ),
     );
   }
