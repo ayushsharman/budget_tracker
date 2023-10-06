@@ -85,6 +85,25 @@ class _HomePageState extends State<HomePage> {
         ),
         body: ListView(
           children: [
+            const SizedBox(height: 20),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20.0),
+              child: Text(
+                "Welcome Ayush",
+                style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20.0),
+              child: Text(
+                "Add your expenses for the day",
+              ),
+            ),
+            const SizedBox(height: 20),
+
             //Bar graph
             ExpenseSummary(startofWeek: value.startofWeekDate()),
 
