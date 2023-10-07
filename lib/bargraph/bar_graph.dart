@@ -11,6 +11,7 @@ class MyBarGraph extends StatelessWidget {
   final double thurAmount;
   final double friAmount;
   final double satAmount;
+
   const MyBarGraph({
     super.key,
     required this.maxY,
