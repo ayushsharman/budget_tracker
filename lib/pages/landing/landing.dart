@@ -31,17 +31,29 @@ class LandingPage extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: BottomAppBar(
+        color: Colors.grey[300],
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: ElevatedButton(
-                onPressed: () {
-                  // Navigate to the main expense tracker screen
-                  // You can use Navigator.push() to navigate to your main app screen.
-                },
-                child: const Text('Get Started'),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: ElevatedButton(
+                  onPressed: () {
+                    // Navigate to the main expense tracker screen
+                    // You can use Navigator.push() to navigate to your main app screen.
+                  },
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.black, // Background color
+                    onPrimary: Colors.white, // Text color
+                    elevation: 5, // Shadow
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(
+                          30.0), // Adjust the radius as needed
+                    ),
+                  ),
+                  child: const Text('Get Started'),
+                ),
               ),
             ),
           ],
