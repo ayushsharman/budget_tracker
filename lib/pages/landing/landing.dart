@@ -1,3 +1,4 @@
+import 'package:budget_tracker_application/pages/bottom_nav.dart';
 import 'package:flutter/material.dart';
 
 class LandingPage extends StatelessWidget {
@@ -31,7 +32,6 @@ class LandingPage extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: BottomAppBar(
-        color: Colors.grey[300],
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -40,8 +40,11 @@ class LandingPage extends StatelessWidget {
                 padding: const EdgeInsets.all(16.0),
                 child: ElevatedButton(
                   onPressed: () {
-                    // Navigate to the main expense tracker screen
-                    // You can use Navigator.push() to navigate to your main app screen.
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => BottomNavBar(),
+                        ));
                   },
                   style: ElevatedButton.styleFrom(
                     primary: Colors.black, // Background color
