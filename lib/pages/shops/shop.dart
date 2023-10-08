@@ -1,3 +1,4 @@
+import 'package:budget_tracker_application/pages/shops/shop_card.dart';
 import 'package:flutter/material.dart';
 
 class ShopsPage extends StatelessWidget {
@@ -11,8 +12,13 @@ class ShopsPage extends StatelessWidget {
         centerTitle: true,
         title: const Text("Shops"),
       ),
-      body: Center(
-        child: Text('Shops Page'),
+      body: const Padding(
+        padding: EdgeInsets.all(12.0),
+        child: Column(
+          children: [
+            ShopCard(),
+          ],
+        ),
       ),
     );
   }
