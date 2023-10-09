@@ -17,6 +17,8 @@ class ShopsPage extends StatelessWidget {
         child: Column(
           children: [
             ShopCard(),
+            ShopCard(),
+            ShopCard(),
           ],
         ),
       ),

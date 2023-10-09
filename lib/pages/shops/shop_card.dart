@@ -5,46 +5,49 @@ class ShopCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12.0),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          // Image
-          Padding(
-            padding: const EdgeInsets.all(12.0),
-            child: CircleAvatar(
-              radius: 35,
-              backgroundColor: Colors.transparent,
-              child: ClipOval(
-                child: Image.asset(
-                  "asset/print.png",
-                  fit: BoxFit.cover,
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12.0),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            // Image
+            Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: CircleAvatar(
+                radius: 35,
+                backgroundColor: Colors.transparent,
+                child: ClipOval(
+                  child: Image.asset(
+                    "asset/print.png",
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),
-          ),
 
-          // Rate Column
-          const Padding(
-            padding: EdgeInsets.all(12.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                Text(
-                  "Black & White Print",
-                  style: TextStyle(fontSize: 16),
-                ),
-                Text(
-                  "Rs. 2",
-                  style: TextStyle(fontSize: 24),
-                ),
-              ],
-            ),
-          )
-        ],
+            // Rate Column
+            const Padding(
+              padding: EdgeInsets.all(12.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Text(
+                    "Black & White Print",
+                    style: TextStyle(fontSize: 16),
+                  ),
+                  Text(
+                    "Rs. 2",
+                    style: TextStyle(fontSize: 24),
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
