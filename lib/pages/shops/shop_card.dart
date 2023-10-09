@@ -1,7 +1,16 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first, must_be_immutable
 import 'package:flutter/material.dart';
 
 class ShopCard extends StatelessWidget {
-  const ShopCard({Key? key});
+  String name;
+  String amount;
+  Image image;
+  ShopCard({
+    Key? key,
+    required this.name,
+    required this.amount,
+    required this.image,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,27 +30,24 @@ class ShopCard extends StatelessWidget {
                 radius: 35,
                 backgroundColor: Colors.transparent,
                 child: ClipOval(
-                  child: Image.asset(
-                    "asset/print.png",
-                    fit: BoxFit.cover,
-                  ),
+                  child: image,
                 ),
               ),
             ),
 
             // Rate Column
-            const Padding(
-              padding: EdgeInsets.all(12.0),
+            Padding(
+              padding: const EdgeInsets.all(12.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Text(
-                    "Black & White Print",
-                    style: TextStyle(fontSize: 16),
+                    name,
+                    style: const TextStyle(fontSize: 16),
                   ),
                   Text(
-                    "Rs. 2",
-                    style: TextStyle(fontSize: 24),
+                    amount,
+                    style: const TextStyle(fontSize: 24),
                   ),
                 ],
               ),

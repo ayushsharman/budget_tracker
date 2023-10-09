@@ -12,13 +12,34 @@ class ShopsPage extends StatelessWidget {
         centerTitle: true,
         title: const Text("Shops"),
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(12.0),
+      body: Padding(
+        padding: const EdgeInsets.all(12.0),
         child: Column(
           children: [
-            ShopCard(),
-            ShopCard(),
-            ShopCard(),
+            ShopCard(
+              name: "Black & White Print",
+              amount: "Rs. 2",
+              image: Image.asset(
+                "asset/print.png",
+                fit: BoxFit.cover,
+              ),
+            ),
+            ShopCard(
+              name: "Colored Print",
+              amount: "Rs. 15",
+              image: Image.asset(
+                "asset/print.png",
+                fit: BoxFit.cover,
+              ),
+            ),
+            ShopCard(
+              name: "Black & White Print",
+              amount: "Rs. 2",
+              image: Image.asset(
+                "asset/print.png",
+                fit: BoxFit.cover,
+              ),
+            ),
           ],
         ),
       ),
