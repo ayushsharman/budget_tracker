@@ -1,4 +1,5 @@
 import 'package:budget_tracker_application/pages/shops/shop_card.dart';
+import 'package:budget_tracker_application/pages/shops/shop_details_page.dart';
 import 'package:flutter/material.dart';
 
 class ShopsPage extends StatelessWidget {
@@ -17,6 +18,13 @@ class ShopsPage extends StatelessWidget {
         child: Column(
           children: [
             ShopCard(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ShopDetailsPage(),
+                    ));
+              },
               name: "Black & White Print",
               amount: "Rs. 2",
               image: Image.asset(
