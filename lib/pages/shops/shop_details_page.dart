@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'shop_card.dart';
+
 class ShopDetailsPage extends StatelessWidget {
   const ShopDetailsPage({super.key});
 
@@ -87,7 +89,22 @@ class ShopDetailsPage extends StatelessWidget {
                 fontSize: 24,
               ),
             ),
-          )
+          ),
+
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: SizedBox(
+              height: 100,
+              child: ShopCard(
+                name: "Near Food Republic",
+                amount: "Block C1",
+                image: Image.asset(
+                  "asset/print.png",
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
