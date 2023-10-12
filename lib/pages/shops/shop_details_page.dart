@@ -46,10 +46,11 @@ class ShopDetailsPage extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(height: 10),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding:
+                const EdgeInsets.symmetric(horizontal: 8.0, vertical: 16.0),
             child: Card(
+              color: Colors.black,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12.0),
               ),
@@ -60,9 +61,11 @@ class ShopDetailsPage extends StatelessWidget {
                   children: [
                     Text(
                       "Black and White Print",
+                      style: TextStyle(fontSize: 18, color: Colors.white),
                     ),
                     Text(
                       "Rs. 2",
+                      style: TextStyle(fontSize: 18, color: Colors.white),
                     ),
                     // Rate Column
                   ],
