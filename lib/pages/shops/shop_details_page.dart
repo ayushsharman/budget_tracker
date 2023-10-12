@@ -14,7 +14,10 @@ class ShopDetailsPage extends StatelessWidget {
         title: const Text("Shops Details"),
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          //Card
+
           Container(
             height: MediaQuery.of(context).size.height * 0.4,
             decoration: const BoxDecoration(
@@ -46,6 +49,7 @@ class ShopDetailsPage extends StatelessWidget {
               ),
             ),
           ),
+
           Padding(
             padding:
                 const EdgeInsets.symmetric(horizontal: 8.0, vertical: 16.0),
@@ -73,6 +77,17 @@ class ShopDetailsPage extends StatelessWidget {
               ),
             ),
           ),
+
+          //Available At:
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.0),
+            child: Text(
+              "Available At",
+              style: TextStyle(
+                fontSize: 24,
+              ),
+            ),
+          )
         ],
       ),
     );
