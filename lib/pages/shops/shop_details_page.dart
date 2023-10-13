@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'shop_card.dart';
 
 class ShopDetailsPage extends StatelessWidget {
-  const ShopDetailsPage({super.key});
+  final String name;
+  final String amount;
+  const ShopDetailsPage({super.key, required this.name, required this.amount});
 
   @override
   Widget build(BuildContext context) {
@@ -59,18 +61,18 @@ class ShopDetailsPage extends StatelessWidget {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12.0),
               ),
-              child: const Padding(
-                padding: EdgeInsets.all(16.0),
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "Black and White Print",
-                      style: TextStyle(fontSize: 18, color: Colors.white),
+                      name,
+                      style: const TextStyle(fontSize: 18, color: Colors.white),
                     ),
                     Text(
-                      "Rs. 2",
-                      style: TextStyle(fontSize: 18, color: Colors.white),
+                      amount,
+                      style: const TextStyle(fontSize: 18, color: Colors.white),
                     ),
                     // Rate Column
                   ],

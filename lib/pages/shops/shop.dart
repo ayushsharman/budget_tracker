@@ -22,7 +22,10 @@ class ShopsPage extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const ShopDetailsPage(),
+                      builder: (context) => const ShopDetailsPage(
+                        name: "Black & White Print",
+                        amount: "Rs. 2",
+                      ),
                     ));
               },
               name: "Black & White Print",
