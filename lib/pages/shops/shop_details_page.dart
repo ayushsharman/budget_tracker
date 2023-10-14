@@ -106,14 +106,14 @@ class ShopDetailsPage extends StatelessWidget {
               ),
             ),
           ),
-          
+
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: SizedBox(
               height: 100,
               child: ShopCard(
-                name: "Near Food Republic",
-                amount: "Block C1",
+                name: "Near Creative Foods",
+                amount: "Block A3",
                 image: Image.asset(
                   "asset/print.png",
                   fit: BoxFit.cover,
@@ -121,8 +121,6 @@ class ShopDetailsPage extends StatelessWidget {
               ),
             ),
           ),
-
-
         ],
       ),
     );
