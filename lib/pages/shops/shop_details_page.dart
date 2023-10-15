@@ -121,6 +121,21 @@ class ShopDetailsPage extends StatelessWidget {
               ),
             ),
           ),
+
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: SizedBox(
+              height: 100,
+              child: ShopCard(
+                name: "Near DSW",
+                amount: "Block B4",
+                image: Image.asset(
+                  "asset/print.png",
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
