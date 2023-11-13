@@ -58,6 +58,10 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  void deleteExpense(ExpenseItem expense) {
+    Provider.of<ExpenseData>(context, listen: false).deleteExpense(expense);
+  }
+
   void save() {
     ExpenseItem newExpense = ExpenseItem(
       name: newExpenseNameController.text,
@@ -128,6 +132,8 @@ class _HomePageState extends State<HomePage> {
                 name: value.getallExpenseList()[index].name,
                 amount: value.getallExpenseList()[index].amount,
                 dateTime: value.getallExpenseList()[index].dateTime,
+                deleteTapped: (p0) =>
+                    deleteExpense(value.getallExpenseList()[index]),
               ),
             ),
           ],
