@@ -1,7 +1,6 @@
 import 'package:budget_tracker_application/pages/home/home.dart';
 import 'package:flutter/material.dart';
 
-import 'profile/profile.dart';
 import 'shops/shop.dart';
 
 class BottomNavBar extends StatefulWidget {
