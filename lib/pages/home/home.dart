@@ -63,14 +63,27 @@ class _HomePageState extends State<HomePage> {
   }
 
   void save() {
-    ExpenseItem newExpense = ExpenseItem(
-      name: newExpenseNameController.text,
-      amount: newExpenseAmountController.text,
-      dateTime: DateTime.now(),
-    );
-    Provider.of<ExpenseData>(context, listen: false).addNewExpense(newExpense);
-    Navigator.pop(context);
-    clear();
+    String expenseName = newExpenseNameController.text;
+    String expenseAmount = newExpenseAmountController.text;
+
+    if (expenseName.isNotEmpty && expenseAmount.isNotEmpty) {
+      ExpenseItem newExpense = ExpenseItem(
+        name: expenseName,
+        amount: expenseAmount,
+        dateTime: DateTime.now(),
+      );
+
+      Provider.of<ExpenseData>(context, listen: false)
+          .addNewExpense(newExpense);
+
+      Navigator.pop(context);
+
+      clear();
+    } else {
+      const SnackBar(
+        content: Text('Please enter both fields.'),
+      );
+    }
   }
 
   void cancel() {
