@@ -1,7 +1,7 @@
 import 'package:budget_tracker_application/data/expense_data.dart';
 import 'package:budget_tracker_application/pages/landing/landing.dart';
 import 'package:flutter/material.dart';
-import 'package:hive_flutter/adapters.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
