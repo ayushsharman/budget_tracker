@@ -51,8 +51,6 @@ class ExpenseSummary extends StatelessWidget {
     String friday,
     String saturday,
   ) {
-    double? max = 100;
-
     List<double> values = [
       value.calculateDailyExpneseSummary()[sunday] ?? 0,
       value.calculateDailyExpneseSummary()[monday] ?? 0,
