@@ -41,6 +41,36 @@ class ExpenseSummary extends StatelessWidget {
     return max == 0 ? 100 : max;
   }
 
+  double calculateWeekTotal(
+    ExpenseData value,
+    String sunday,
+    String monday,
+    String tuesday,
+    String wednesday,
+    String thursday,
+    String friday,
+    String saturday,
+  ) {
+    double? max = 100;
+
+    List<double> values = [
+      value.calculateDailyExpneseSummary()[sunday] ?? 0,
+      value.calculateDailyExpneseSummary()[monday] ?? 0,
+      value.calculateDailyExpneseSummary()[tuesday] ?? 0,
+      value.calculateDailyExpneseSummary()[wednesday] ?? 0,
+      value.calculateDailyExpneseSummary()[thursday] ?? 0,
+      value.calculateDailyExpneseSummary()[friday] ?? 0,
+      value.calculateDailyExpneseSummary()[saturday] ?? 0,
+    ];
+
+    double total = 0;
+    for (int i = 0; i < values.length; i++) {
+      total += values[i];
+    }
+
+    return total;
+  }
+
   @override
   Widget build(BuildContext context) {
     //get yymmdd for each day of this week
@@ -62,12 +92,13 @@ class ExpenseSummary extends StatelessWidget {
     return Consumer<ExpenseData>(
       builder: (context, value, child) => Column(
         children: [
-          const Padding(
+          Padding(
             padding: EdgeInsets.all(8.0),
             child: Row(
               children: [
-                Text("Week Total: "),
-                Text("Rs.200"),
+                const Text("Week Total: "),
+                Text(
+                    "Rs. ${calculateWeekTotal(value, sunday, monday, tuesday, wednesday, thursday, friday, saturday)}"),
               ],
             ),
           ),
