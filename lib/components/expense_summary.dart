@@ -60,19 +60,32 @@ class ExpenseSummary extends StatelessWidget {
         convertDateTimeToString(startofWeek.add(const Duration(days: 6)));
 
     return Consumer<ExpenseData>(
-      builder: (context, value, child) => SizedBox(
-        height: calculateMax(value, sunday, monday, tuesday, wednesday,
-            thursday, friday, saturday),
-        child: MyBarGraph(
-          maxY: 100,
-          sunAmount: value.calculateDailyExpneseSummary()[sunday] ?? 0,
-          monAmount: value.calculateDailyExpneseSummary()[monday] ?? 0,
-          tueAmount: value.calculateDailyExpneseSummary()[tuesday] ?? 0,
-          wedAmount: value.calculateDailyExpneseSummary()[wednesday] ?? 0,
-          thurAmount: value.calculateDailyExpneseSummary()[thursday] ?? 0,
-          friAmount: value.calculateDailyExpneseSummary()[friday] ?? 0,
-          satAmount: value.calculateDailyExpneseSummary()[saturday] ?? 0,
-        ),
+      builder: (context, value, child) => Column(
+        children: [
+          const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Row(
+              children: [
+                Text("Week Total: "),
+                Text("Rs.200"),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: calculateMax(value, sunday, monday, tuesday, wednesday,
+                thursday, friday, saturday),
+            child: MyBarGraph(
+              maxY: 100,
+              sunAmount: value.calculateDailyExpneseSummary()[sunday] ?? 0,
+              monAmount: value.calculateDailyExpneseSummary()[monday] ?? 0,
+              tueAmount: value.calculateDailyExpneseSummary()[tuesday] ?? 0,
+              wedAmount: value.calculateDailyExpneseSummary()[wednesday] ?? 0,
+              thurAmount: value.calculateDailyExpneseSummary()[thursday] ?? 0,
+              friAmount: value.calculateDailyExpneseSummary()[friday] ?? 0,
+              satAmount: value.calculateDailyExpneseSummary()[saturday] ?? 0,
+            ),
+          ),
+        ],
       ),
     );
   }
