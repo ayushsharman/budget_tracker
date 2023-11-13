@@ -20,7 +20,6 @@ class ShopDetailsPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           //Card
-
           Container(
             height: MediaQuery.of(context).size.height * 0.4,
             decoration: const BoxDecoration(
