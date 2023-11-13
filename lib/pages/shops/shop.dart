@@ -36,6 +36,16 @@ class ShopsPage extends StatelessWidget {
               ),
             ),
             ShopCard(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ShopDetailsPage(
+                        name: "Colored Print",
+                        amount: "Rs. 15",
+                      ),
+                    ));
+              },
               name: "Colored Print",
               amount: "Rs. 15",
               image: Image.asset(
@@ -44,6 +54,16 @@ class ShopsPage extends StatelessWidget {
               ),
             ),
             ShopCard(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ShopDetailsPage(
+                        name: "Black & White Print",
+                        amount: "Rs. 2",
+                      ),
+                    ));
+              },
               name: "Black & White Print",
               amount: "Rs. 2",
               image: Image.asset(
