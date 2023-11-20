@@ -1,5 +1,6 @@
 import 'package:budget_tracker_application/pages/shops/shop_card.dart';
 import 'package:budget_tracker_application/pages/shops/shop_details_page.dart';
+import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 
 class ShopsPage extends StatelessWidget {
@@ -69,6 +70,36 @@ class ShopsPage extends StatelessWidget {
               image: Image.asset(
                 "asset/print.png",
                 fit: BoxFit.cover,
+              ),
+            ),
+            const SizedBox(height: 10),
+            Container(
+              height: 200,
+              decoration: BoxDecoration(
+                color: Colors.black,
+                borderRadius: BorderRadius.circular(
+                    20.0), // Set your desired border radius
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Swiper(
+                  itemBuilder: (BuildContext context, int index) {
+                    // Replace placeholder image with the two images
+                    List<String> images = [
+                      "asset/save money.png",
+                      "asset/print shop.png",
+                    ];
+
+                    return Image.asset(
+                      images[index],
+                      fit: BoxFit.fill,
+                    );
+                  },
+                  itemCount:
+                      2, // Adjust the itemCount to match the number of images
+                  pagination: const SwiperPagination(),
+                  autoplay: true,
+                ),
               ),
             ),
           ],
