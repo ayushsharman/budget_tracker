@@ -94,7 +94,10 @@ class ExpenseSummary extends StatelessWidget {
             padding: const EdgeInsets.all(20.0),
             child: Row(
               children: [
-                const Text("Week Total: "),
+                const Text(
+                  "Week Total: ",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
                 Text(
                     "Rs. ${calculateWeekTotal(value, sunday, monday, tuesday, wednesday, thursday, friday, saturday)}"),
               ],
