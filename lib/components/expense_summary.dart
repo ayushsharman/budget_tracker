@@ -101,10 +101,10 @@ class ExpenseSummary extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: calculateMax(value, sunday, monday, tuesday, wednesday,
-                thursday, friday, saturday),
+            height: 200,
             child: MyBarGraph(
-              maxY: 100,
+              maxY: calculateMax(value, sunday, monday, tuesday, wednesday,
+                  thursday, friday, saturday),
               sunAmount: value.calculateDailyExpneseSummary()[sunday] ?? 0,
               monAmount: value.calculateDailyExpneseSummary()[monday] ?? 0,
               tueAmount: value.calculateDailyExpneseSummary()[tuesday] ?? 0,

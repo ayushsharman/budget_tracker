@@ -32,15 +32,15 @@ class _HomePageState extends State<HomePage> {
           children: [
             TextField(
               decoration: const InputDecoration(
-                hintText: "Enter Amount",
-              ),
-              controller: newExpenseAmountController,
-            ),
-            TextField(
-              decoration: const InputDecoration(
                 hintText: "Enter Expense Name",
               ),
               controller: newExpenseNameController,
+            ),
+            TextField(
+              decoration: const InputDecoration(
+                hintText: "Enter Amount",
+              ),
+              controller: newExpenseAmountController,
             ),
           ],
         ),
