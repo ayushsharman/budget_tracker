@@ -40,7 +40,7 @@ class MyBarGraph extends StatelessWidget {
 
     return BarChart(
       BarChartData(
-        maxY: maxY,
+        maxY: maxY, 
         titlesData: const FlTitlesData(
           topTitles: AxisTitles(
             sideTitles: SideTitles(showTitles: false),
